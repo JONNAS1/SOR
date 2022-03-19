@@ -41,7 +41,7 @@ Shutdown /s
 #Si queremos reiniciar de manera correcta nuestro Windows server 2019-Sin GUI(sin interfaz gráfica), utilizamos el siguiente comando:
 Shutdown /r
 
-#Para saber la versión de Windows que tenemos, usamoS el siguiente comando: 
+#Para saber la versión deL sistema operativo que tenemos en Windows, usamoS el siguiente comando: 
 ver
 
 
