@@ -48,7 +48,11 @@ systeminfo | find /i "Sistema Operativo"
 #Para observar toda la información disponible de la configuración del adapatdor de red, usamos el siguiente comando:
 ipconfig /all
 
+#Para crear otro usario, hago uso del siguinte comando:
+net user JMoliner "Wnix 20hola" /add
 
+#Y si quiero hacer administrador el usuario que he creado anteriormente, uso el siguiente comando:
+net localgroup administradores JMoliner /add
 
 
 
