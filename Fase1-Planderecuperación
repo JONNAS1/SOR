@@ -45,7 +45,7 @@ ver
 systeminfo | find /i "Sistema Operativo"
 
 #Para observar toda la información disponible de la configuración del adapatdor de red, usamos el siguiente comando:
-ifconfig /all
+ipconfig /all
 
 
 
