@@ -1,1 +1,26 @@
-LLL
+#Para desplegar un menu en powershell que promocione o despromocion un servidor a controlador del dominio, tenemos que escribir lo siguiente en un documento de texto y ejecutar el documento en powershell: 
+Param(
+ [string]$Param,
+ [string]$Param 
+)
+Write-Host "Los parámetros son:"$Param1 " " $Param2
+pause
+
+function promocionarCD
+{
+Write-Host "  Ejecuto el comando CD"
+}
+
+function mostrar menu
+{ 
+     param (
+           [string]$Titulo = 'Selección de opciones'
+     )
+     Clear-Host 
+     Write-Host "================ $Titulo================" 
+   
+   
+     Write-Host "1) Promocionar a controlador de dominio
+     Write-Host "2) Despromocionar el controlador de dominio 
+     Write-Host "3)
+     Write-Host "S) Presiona 'S' Para salir 
