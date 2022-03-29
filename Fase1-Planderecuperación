@@ -44,6 +44,8 @@ ver
 #Si no puedes obtener la versión del kernel del Windows server 2019-Sin GUI usando el comando "systeminfo", usa el siguiente comando:
 systeminfo | find /i "Sistema Operativo"
 
+#Para observar toda la información disponible de la configuración del adapatdor de red, usamos el siguiente comando:
+ifconfig /all
 
 
 
