@@ -28,9 +28,10 @@ exit
 #Si queremos obtener la versión del kernel (la versión del núcleo de nuestro sisteam operativo) o más información del sistema, usamos el siguiente comando:
 SYSTEMINFO
 
-#Si queremos desactivar el firewall para poder comunicarnos con otros dominios o equipos, usaremos los siguientes comandos(pero no se quitará el firewall de la red privada):
+#Si queremos desactivar el firewall para poder comunicarnos con otros dominios o equipos, usaremos los siguientes comandos:
 netsh advfirewall set currentprofile state off
 netsh advfirewall set domainprofile state off 
+netsh advfirewall set privateprofile state off 
 
 #Si queremos apagar de manera correcta nuestro Windows server 2019-Sin GUI(sin interfaz gráfica), utilizamos el siguiente comando:
 Shutdown /s
