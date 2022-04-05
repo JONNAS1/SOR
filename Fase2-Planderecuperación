@@ -1,5 +1,16 @@
+#Para crear nuestro nuevo dominio, hacemos uso del siguiente comando:
+Install-ADDSForest -DatabasePath "C:\Windows\NTDS" -LogPath "C:\Windows\NTDS" -SYSVOLPath "C:\Windows\SYSVOL" -DomainName "edu-gva.es" -DomainNetBIOSName "dominio" -ForestMode "Win2012" -InstallDNS:$true -NoRebootOnCompletion:$false -Force:$true
+
+#Para crear un nuevo dominio secundario llamado Repl.iescaminas en el bosque llamado edu-gva.es y que el sistema pida especificar y confirmar una contraseña enmascarada, usamos el sguiente comnado:
+Install-ADDSDomain "NewDomainName Repl.iescaminas "ParentDomainName edu-gva.es "DomainType Child
+
 #
-# Script de WindowsPowershell para la implementación de AD DS
+
+#
+
+
+##
+# Install-ADDSForest -DatabasePath "C:\Windows\NTDS" -LogPath "C:\Windows\NTDS" -SYSVOLPath "C:\Windows\SYSVOL" -DomainName "dominio.local" -DomainNetBIOSName "dominio" -ForestMode "Win2012" -InstallDNS:$true -NoRebootOnCompletion:$false -Force:$trueScript de WindowsPowershell para la implementación de AD DS
 #
 
 Import-Module ADDSDeployment 
@@ -14,3 +25,10 @@ Install-ADDSForest `
 -NoRebooOCompletion:$false ` 
 -SysvolPath "C:\WindowsªSYSVOL" `
 -Force:$true
+
+#Implewmentación del dominio secunadario al bosque existenete:
+Install-AddsDomain
+-domaintype <{childdomain | treedomain}>
+-parentdomainname <edu-gva.es>
+-newdomainname <Repl.iescaminas>
+-credential <pscredential>
