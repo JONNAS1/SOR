@@ -2,7 +2,7 @@
 fsutil fsinfo volumeinfo C:
 
 #Para saber la versión del sistema de archivos que está usando el disco en powershell, escribimos lo siguiente:
-fsutil fsinfo ntsinfo C:
+fsutil fsinfo ntfsInfo C:
 
 #Si queremos saber que volumen o particiones que tiene ese volumen en nuestro equipo desde cmd, tendremos que acceder a diskpart, escribriendo el siguiente comando:
 diskpart
