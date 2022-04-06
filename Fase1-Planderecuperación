@@ -25,7 +25,7 @@ detail partition
 #Para salir de diskpart si ya hemos obtenido la información que queríamos, usamos el siguiente comando:
 exit
 
-#Si queremos obtener la versión del kernel (la versión del núcleo de nuestro sisteam operativo) o más información del sistema, usamos el siguiente comando:
+#Si queremos obtener la versión del kernel (la versión del núcleo de nuestro sistema operativo) o más información del sistema, usamos el siguiente comando:
 SYSTEMINFO
 
 #Si queremos desactivar el firewall para poder comunicarnos con otros dominios o equipos, usaremos los siguientes comandos:
