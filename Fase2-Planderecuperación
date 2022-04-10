@@ -4,9 +4,11 @@ Install-ADDSForest -DatabasePath "C:\Windows\NTDS" -LogPath "C:\Windows\NTDS" -S
 #Para crear un nuevo dominio secundario llamado Repl.iescaminas en el bosque llamado edu-gva.es y que el sistema pida especificar y confirmar una contraseña enmascarada, usamos el sguiente comnado:
 Install-ADDSDomain "NewDomainName Repl.iescaminas "ParentDomainName edu-gva.es "DomainType Child
 
-#
+#Para instalar el servidor DNS, desde PowerShell usamos el siguiente comando:
+Install-WindowsFeature -Name DNS -IncludeAllSubFeature -IncludeManagementTools -Restart
 
-#
+#Para instalar el módulo de Active Directory en PowerShell, usamos el siguiente comando:
+Install-WindowsFeature -Name RSAT-AD-PowerShell -IncludeAllSubfeature -IncludeMannagementTools -Restart
 
 
 ##
