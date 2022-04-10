@@ -8,7 +8,7 @@ Install-ADDSDomain "NewDomainName Repl.iescaminas "ParentDomainName edu-gva.es "
 Install-WindowsFeature -Name DNS -IncludeAllSubFeature -IncludeManagementTools -Restart
 
 #Para instalar el módulo de Active Directory en PowerShell, usamos el siguiente comando:
-Install-WindowsFeature -Name RSAT-AD-PowerShell -IncludeAllSubfeature -IncludeMannagementTools -Restart
+Install-WindowsFeature -Name RSAT-AD-PowerShell -IncludeAllSubfeature -IncludeManagementTools -Restart
 
 
 ##
