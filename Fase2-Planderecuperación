@@ -92,4 +92,47 @@ New-ADUser -SamAccountName $cuenta -UserPrincipalName $nameShort -Name $cuenta -
 Add-ADGroupMember -Identity $linea.Department -Members $linea.account
 }
   
+#Para crear grupos grupos, primero escribimos lo siguinete en l csv:
+Name;Description;Category;Path;Scope
+Informatica_GL;Grupo local del departamento de informatica;Security;OU=departamentos;DomainLocal7
+
+Informatica_GG;Grupo del departamento de informatica;Security;OU=departamentos;Global
+
+#Para crear grupos, escribimos lo siguinete en el archivo ps1:
+$dominio="srvslave"
+$path= "dc=caminas,dc=edu-gva,dc=es"
+if (!(Get-Module -Name ActiveDirectory)) #Accederá al then solo si no existe una entrada llamada ActiveDirectory
+{
+  Import-Module ActiveDirectory #Se carga el módulo
+}
+
+$fileUsersCsv=Read-Host "Introduce el fichero csv de los grupos"
+$fichero = import-csv -Path $fileUsersCsv -Delimiter ";"
+foreach($linea in $fichero)
+{
+$path_OU=$linea.Path +","+$path
+NEW-ADGroup -Name $linea.Name -Description $linea.Description -Path $path_OU -GroupScope $linea.Scope
+}
+
+#Para crear UOS en el archivo csv:
+Name:Descripcion:Path:1
+departamentos:Unidad Organizativa::1
+Equipos:Unidad Organizativa equipos:OU=departamentos:2
+
+
+#Para crear UOS en el archivo ps1:
+$dominio=edu-gva.es
+$dc="dc=caminas,dc=edu-gva,dc=es"
+Write-Host $dc
+$Path=$linea.Path+","+$dc	
+$ficheroCsvUO=Read-Host "Introduce el fichero csv de UO's:"
+$fichero = import-csv -Path $ficheroCsvUO -delimiter :
+foreach($linea in $fichero)
+{
+   New-ADOrganizationalUnit -Description:$linea.Description -Name:$linea.Name -Path:$Path -ProtectedFromAccidentalDeletion:$true
+}
+  
+
+
+
 
