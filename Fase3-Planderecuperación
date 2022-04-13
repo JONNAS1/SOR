@@ -2,7 +2,7 @@
 Import-Module ActiveDirectory 
 
 #Crear nuevos grupos desde powershell, usando el siguiente comando:
-New-ADGroup -Name "Innformatica" -SamAccountName Informatica -GroupCategory Security -GroupScope Global -DisplayName "Redaccion Solvetic" -Path " OU=Informatica ,DC=edu-gva ,DC=es" -Description "Departamento Informatica"
+New-ADGroup -Name "Informatica" -SamAccountName Informatica -GroupCategory Security -GroupScope Global -DisplayName "Redaccion Solvetic" -Path " OU=Informatica ,DC=edu-gva ,DC=es" -Description "Departamento Informatica"
 
 #Bucle para que lea todas la líneas del script, escribiendo lo siguiente al final del script: 
 foreach($linea in $fichero)
