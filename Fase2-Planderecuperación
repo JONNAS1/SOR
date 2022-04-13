@@ -28,9 +28,25 @@ Install-ADDSForest `
 -SysvolPath "C:\WindowsªSYSVOL" `
 -Force:$true
 
-#Implewmentación del dominio secunadario al bosque existenete:
+#Implewmentación del dominio secundario al bosque existenete:
 Install-AddsDomain
 -domaintype <{childdomain | treedomain}>
 -parentdomainname <edu-gva.es>
 -newdomainname <Repl.iescaminas>
 -credential <pscredential>
+
+
+#Primero se pone el ps1 y después el csv.
+#Para crear nuevos equipos (escribimos todo en csv) , usamos el sigiente comando:
+Computer:Path
+W10HG-1:"OU=equipos,OU=departamentos,dc=""caminas"",dc=""edu-gva"",dc=""es"""
+
+#Para iniciar a crear nuevos equipos (creamos y escribimos esto en un archivo ps1), usamos el sigiente comando:
+$dc="dc=caminas,dc=edu-gva,dc=es"
+$equiposCsv=Read-Host "Introduce el fichero csv de Equipos"
+$fichero= import-csv -Path $equiposcsv -delimiter ":"
+
+foreach($linea in $fichero)
+{
+New-ADComputer -Enabled:$true -Name:$linea.Computer -Path:$linea.Path -SamAccountName:$linea.Computer
+}
