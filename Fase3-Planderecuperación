@@ -23,6 +23,9 @@ net user (nombre del usuario) /times:L,7am-3pm;M,7am-3pm;M,7am-3pm;X,7am-3pm;J,7
 
 net user (nombre del usuario) /times:L,3pm-11pm;M,3pm-11pm;M,3pm-11pm;X,3pm-11pm;J,3pm-11pm;V,3pm-11pm
 
+#Para asignarle las horas de acceso (de 7:00 a 15:00) a los usuarios de Coordinación, usando el siguiente comando: 
+net user (nombre del usuario) /times:L,7am-3pm;M,7am-3pm;M,7am-3pm;X,7am-3pm;J,7am-3pm;V,7am-3pm
+
 
 
 #Para asignar las políticas de contraseña (Los usuarios tienen que cambiar contraseña en el siguiente inicio de sesión y la cuenta caducará a los 20 días):
