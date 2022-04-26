@@ -22,12 +22,12 @@ net user (nombre del usuario) /times:L,9am-2pm;M,9am-2pm;M,9am-2pm;X,9am-2pm;J,9
 net user (nombre del usuario) /times:L,4pm-7pm;M,4pm-7pm;M,4pm-7pm;X,4pm-7pm;J,4apm-7pm;V,4pm-7pm
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Para asignarle las horas de acceso *(3 usuarios de 7:00 a 15:00 y otros 3 usuarios de 15:00 a 23:00) a los usuarios de ESO, usando el siguiente comando:
+#Para asignarle las horas de acceso *(3 usuarios de 7:00 a 15:00 y otros 3 usuarios de 15:00 a 23:00) a los usuarios de Coordinación, usando el siguiente comando:
 net user (nombre del usuario) /times:L,7am-3pm;M,7am-3pm;M,7am-3pm;X,7am-3pm;J,7am-3pm;V,7am-3pm
 net user (nombre del usuario) /times:L,3pm-11pm;M,3pm-11pm;M,3pm-11pm;X,3pm-11pm;J,3pm-11pm;V,3pm-11pm
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Para asignarle las horas de acceso (de 7:00 a 15:00) a los usuarios de Coordinación, usando el siguiente comando: 
+#Para asignarle las horas de acceso (de 7:00 a 15:00) a los usuarios de Informática, usando el siguiente comando: 
 net user (nombre del usuario) /times:L,7am-3pm;M,7am-3pm;M,7am-3pm;X,7am-3pm;J,7am-3pm;V,7am-3pm
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
