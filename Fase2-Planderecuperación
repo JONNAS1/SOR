@@ -64,7 +64,7 @@ Install-AddsDomain
 #Primero se pone el ps1 y después el csv.
 #Para crear nuevos equipos (escribimos todo en csv) , usamos el sigiente comando:
 Computer:Path
-W10IC-1:"OU=equipos,OU=departamentos,dc=""caminas"",dc=""edu-gva"",dc=""es"""
+W10IC-1:"OU=equipos,OU=departamentos,dc="caminas",dc="edu-gva",dc="es"
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
