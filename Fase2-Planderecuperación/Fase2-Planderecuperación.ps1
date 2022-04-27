@@ -29,7 +29,7 @@ Install-ADDSForest `
 -Force:$true
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Script de a implementación de AD DS al subdominio (aignación de subdominio a bosque existenete):
+#Script de a implementación de AD DS al subdominio (asignación de subdominio a bosque existente):
 #
 # Script de Windows PowerShell para implementación de AD DS
 #
@@ -84,7 +84,7 @@ Name:Surname:Surname1:Surname2:account:DNI:Delegation:Department:Enabled:Passwor
 MAICA:CAMPOS LLUCH:CAMPOS:LLUCH:MCAMPOSL:12345685-H:general:Enfermeria:$true:12345685-HLLUCH:60:MCAMPOSL@hgeneral.san-gva.es:W10HG-1:OU=departamentos
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#En el ps1 para crear usuarios, escribimos lo siguinete:
+#En el ps1 para crear usuarios, escribimos lo siguiente:
 $dominio="edu-gva.es"
 $dc="dc=caminas,dc=edu-gva,dc=es"
 if (!(Get-Module -Name ActiveDirectory)) #accederá al then si no tiene ActiveDirectory sería como decirle al ordenador si no lo tienes carga el modulo,si lo tienes no hagas nada
@@ -120,13 +120,14 @@ New-ADUser -SamAccountName $cuenta -UserPrincipalName $nameShort -Name $cuenta -
     Write-Host $linea.account
 Add-ADGroupMember -Identity $linea.Department -Members $linea.account
 }
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #Para crear grupos grupos, primero escribimos lo siguinete en l csv:
 Name;Description;Category;Path;Scope
 Informatica_GL;Grupo local del departamento de informatica;Security;OU=departamentos;DomainLocal7
 
 Informatica_GG;Grupo del departamento de informatica;Security;OU=departamentos;Global
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #Para crear grupos, escribimos lo siguinete en el archivo ps1:
 $dominio="edu-gva.es"
@@ -135,7 +136,7 @@ if (!(Get-Module -Name ActiveDirectory)) #Accederá al then solo si no existe un
 {
   Import-Module ActiveDirectory #Se carga el módulo
 }
-
+Informatica_GG;Grupo del departamento de informatica;Security;OU=departamentos;Global
 $fileUsersCsv=Read-Host "Introduce el fichero csv de los grupos"
 $fichero = import-csv -Path $fileUsersCsv -Delimiter ";"
 foreach($linea in $fichero)
@@ -143,14 +144,14 @@ foreach($linea in $fichero)
 $path_OU=$linea.Path +","+$path
 NEW-ADGroup -Name $linea.Name -Description $linea.Description -Path $path_OU -GroupScope $linea.Scope
 }
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #Para crear UOS en el archivo csv:
 Name:Descripcion:Path:1
 departamentos:Unidad Organizativa::1
 Equipos:Unidad Organizativa equipos:OU=departamentos:2
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Para crear UOS en el archivo ps1:
 $dominio="edu-gva.es"
 $dc="dc=caminas,dc=edu-gva,dc=es"
@@ -162,7 +163,7 @@ foreach($linea in $fichero)
 {
    New-ADOrganizationalUnit -Description:$linea.Description -Name:$linea.Name -Path:$Path -ProtectedFromAccidentalDeletion:$true
 }
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
