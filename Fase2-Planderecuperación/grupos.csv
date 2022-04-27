@@ -1,0 +1,5 @@
+#Para crear grupos grupos, primero escribimos lo siguiente en el csv:
+Name;Description;Category;Path;Scope
+Informatica_GL;Grupo local del departamento de informatica;Security;OU=departamentos;DomainLocal
+
+Informatica_GG;Grupo del departamento de informatica;Security;OU=departamentos;Global
