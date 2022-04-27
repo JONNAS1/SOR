@@ -1,1 +1,3 @@
-
+#En el csv para crear usuarios, escribimos lo siguiente:
+Name:Surname:Surname1:Surname2:account:DNI:Delegation:Department:Enabled:Password:TurnPassDays:email:Computer:Path
+MAICA:CAMPOS LLUCH:CAMPOS:LLUCH:MCAMPOSL:12345685-H:general:Enfermeria:$true:12345685-HLLUCH:60:MCAMPOSL@hgeneral.san-gva.es:W10HG-1:OU=departamentos
