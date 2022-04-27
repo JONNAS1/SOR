@@ -1,4 +1,4 @@
 #Para crear UOS en el archivo csv:
 Name:Descripcion:Path:1
-departamentos:Unidad Organizativa::1
+departamentos:Unidad Organizativa:1
 Equipos:Unidad Organizativa equipos:OU=departamentos:2
